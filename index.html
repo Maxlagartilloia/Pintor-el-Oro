@@ -9,15 +9,14 @@
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
     <style>
         body {
+            background: #ffffff;
+            color: #1B2B45;
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Mouse painting effect */
+        /* Mouse painting effect con paleta del logo */
         #paint-canvas {
             position: fixed;
             top: 0;
@@ -28,159 +27,165 @@
             z-index: 0;
         }
 
-        /* Modal 3D */
-        .modal-3d {
-            perspective: 900px;
-        }
-
-        .modal-content-3d {
-            transform: rotateY(0deg);
-            transition: transform 0.5s ease;
-        }
-
-        .modal-content-3d:hover {
-            transform: rotateY(10deg);
+        .color-dot {
+            transition: opacity 0.4s ease;
         }
     </style>
 </head>
 
-<body class="bg-gray-900 text-white relative">
+<body class="relative">
 
     <!-- Canvas Pintura -->
     <canvas id="paint-canvas"></canvas>
 
     <!-- WhatsApp flotante -->
     <a href="https://wa.me/593964104186?text=Hola%20Don%20Francisco.%20Quiero%20una%20cotización%20de%20pintura."
-        class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-xl text-2xl z-50">
-        🟢
+        class="fixed bottom-6 right-6 bg-[#4CAF50] text-white p-4 rounded-full shadow-xl text-3xl z-50">
+        💬
     </a>
 
     <!-- HEADER -->
-    <header class="relative z-10">
-        <nav class="flex items-center justify-between px-6 py-4 bg-gray-800/60 backdrop-blur-md">
-            <div class="text-2xl font-bold text-yellow-400">
-                <img src="logo-donfrancisco.png" class="w-14 inline-block" />
-                DonFranciscoTaller
+    <header class="relative z-10 shadow-md">
+        <nav class="flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur-lg border-b border-gray-200">
+            <div class="flex items-center gap-3">
+                <img src="logo-donfrancisco.png" class="w-24 h-auto" />
+                <span class="text-3xl font-bold text-[#E63926]">DonFranciscoTaller</span>
             </div>
-            <a href="#contacto" class="bg-yellow-400 text-black px-5 py-2 rounded-lg font-semibold">Contáctame</a>
+
+            <a href="#contacto"
+                class="bg-[#F59E0B] hover:bg-[#E63926] text-white px-5 py-2 rounded-lg font-semibold transition">
+                Contáctame
+            </a>
         </nav>
     </header>
 
     <!-- HERO -->
     <section class="relative z-10 px-6 lg:px-20 py-20 flex flex-col lg:flex-row items-center gap-10">
         <div class="flex-1">
-            <h1 class="text-5xl font-bold leading-tight">
-                Arte que transforma espacios  
-                <span class="text-yellow-400">y crea historias.</span>
+            <h1 class="text-5xl font-extrabold leading-tight text-[#1B2B45]">
+                Arte que transforma tus espacios  
+                <span class="text-[#E63926]">con color y creatividad.</span>
             </h1>
-            <p class="mt-4 text-gray-300 text-lg">
+            <p class="mt-4 text-gray-600 text-lg">
                 Soy Francisco Quezada, pintor y dibujante profesional. Pinto iglesias, centros turísticos, gimnasios,
                 restaurantes, colegios, fincas y más.
             </p>
 
             <div class="mt-8 flex gap-4">
-                <a href="#galeria" class="px-6 py-3 bg-yellow-400 text-black rounded-lg font-semibold">Ver Galería</a>
+                <a href="#galeria"
+                    class="px-6 py-3 bg-[#E63926] hover:bg-[#0F1C39] text-white rounded-lg font-semibold transition">
+                    Ver Galería
+                </a>
 
                 <a href="https://maps.app.goo.gl/8WV9uRYj5LcvKLbP8"
-                    class="px-6 py-3 border border-yellow-400 text-yellow-400 rounded-lg font-semibold">
+                    class="px-6 py-3 border-2 border-[#0F1C39] text-[#0F1C39] hover:bg-[#0F1C39] hover:text-white rounded-lg font-semibold transition">
                     Google Maps
                 </a>
             </div>
         </div>
 
         <div class="flex-1">
-            <img src="hero-francisco.jpg" class="rounded-xl shadow-xl w-full object-cover" />
+            <img src="hero-francisco.jpg" class="rounded-xl shadow-2xl w-full object-cover border-4 border-[#FCD34D]" />
         </div>
     </section>
 
     <!-- SOBRE MÍ -->
     <section id="sobre" class="px-6 lg:px-20 py-20">
-        <h2 class="text-4xl font-bold mb-10">Sobre mí</h2>
-        <p class="text-gray-300 text-lg max-w-3xl">
-            Con más de 15 años de experiencia, he transformado espacios en Ecuador a través de pintura artística,
-            murales, detallado visual y decoración profesional de interiores y exteriores. Mi pasión es plasmar ideas,
-            emociones y colores en cada proyecto que realizo.
+        <h2 class="text-4xl font-bold mb-6 text-[#0F1C39]">Sobre mí</h2>
+        <p class="text-gray-700 text-lg max-w-3xl">
+            Con más de 15 años de experiencia, he transformado espacios en Ecuador con pintura artística, murales y
+            decoración profesional. Mi pasión es plasmar emociones, ideas y creatividad en cada proyecto, siempre con
+            calidad y dedicación.
         </p>
     </section>
 
     <!-- SERVICIOS -->
-    <section id="servicios" class="px-6 lg:px-20 py-20 bg-gray-800">
-        <h2 class="text-4xl font-bold mb-10">Servicios</h2>
+    <section id="servicios" class="px-6 lg:px-20 py-20 bg-[#F9FAFB] border-t border-b">
+        <h2 class="text-4xl font-bold mb-10 text-[#0F1C39]">Servicios</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">🎨 Pintura artística para Iglesias</div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">🏞️ Centros turísticos</div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">🏋️ Gimnasios</div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">🍽️ Restaurantes y locales</div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">🏫 Colegios</div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">🏡 Fincas y exteriores</div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#E63926]">🎨 Iglesias</div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#F59E0B]">🏞️ Centros turísticos</div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#4CAF50]">🏋️ Gimnasios</div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#3BA7E6]">🍽️ Restaurantes</div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#0F1C39]">🏫 Colegios</div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#FCD34D]">🏡 Fincas</div>
         </div>
     </section>
 
     <!-- GALERÍA -->
     <section id="galeria" class="px-6 lg:px-20 py-20">
-        <h2 class="text-4xl font-bold mb-10">Galería de Trabajos</h2>
+        <h2 class="text-4xl font-bold mb-10 text-[#0F1C39]">Galería de Trabajos</h2>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <!-- 12 imágenes -->
-            <!-- Cambia solo los archivos, no el código -->
-            <img src="gallery-01.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
-            <img src="gallery-02.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
-            <img src="gallery-03.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
-            <img src="gallery-04.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+            <img src="gallery-01.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+                onclick="openModal(this.src)" />
+            <img src="gallery-02.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+                onclick="openModal(this.src)" />
+            <img src="gallery-03.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+                onclick="openModal(this.src)" />
+            <img src="gallery-04.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+                onclick="openModal(this.src)" />
 
-            <img src="gallery-05.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
-            <img src="gallery-06.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
-            <img src="gallery-07.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
-            <img src="gallery-08.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+            <img src="gallery-05.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+                onclick="openModal(this.src)" />
+            <img src="gallery-06.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+                onclick="openModal(this.src)" />
+            <img src="gallery-07.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+                onclick="openModal(this.src)" />
+            <img src="gallery-08.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+                onclick="openModal(this.src)" />
 
-            <img src="gallery-09.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
-            <img src="gallery-10.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
-            <img src="gallery-11.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
-            <img src="gallery-12.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+            <img src="gallery-09.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+                onclick="openModal(this.src)" />
+            <img src="gallery-10.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+                onclick="openModal(this.src)" />
+            <img src="gallery-11.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+                onclick="openModal(this.src)" />
+            <img src="gallery-12.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+                onclick="openModal(this.src)" />
         </div>
     </section>
 
-    <!-- MODAL 3D -->
-    <div id="modal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 modal-3d">
-        <div class="modal-content-3d bg-gray-800 p-4 rounded-lg shadow-2xl">
-            <img id="modal-img" src="" class="rounded-lg w-[90vw] max-w-3xl" />
-        </div>
-        <button onclick="closeModal()" class="absolute top-10 right-10 text-white text-3xl">✖</button>
+    <!-- MODAL -->
+    <div id="modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+        <img id="modal-img" src="" class="rounded-lg max-w-3xl w-[90vw] shadow-2xl border-4 border-white" />
+        <button onclick="closeModal()" class="absolute top-10 right-10 text-white text-4xl">✖</button>
     </div>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="px-6 lg:px-20 py-20 bg-gray-800">
-        <h2 class="text-4xl font-bold mb-10">Contáctame</h2>
+    <section id="contacto" class="px-6 lg:px-20 py-20 bg-[#F9FAFB] border-t">
+        <h2 class="text-4xl font-bold mb-10 text-[#0F1C39]">Contáctame</h2>
 
         <form class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
-            <input type="text" placeholder="Tu nombre" class="p-3 rounded-lg text-black" />
-            <input type="email" placeholder="Tu correo" class="p-3 rounded-lg text-black" />
-            <textarea placeholder="Tu mensaje" class="p-3 rounded-lg text-black md:col-span-2"></textarea>
-            <button class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold w-fit">
+            <input type="text" placeholder="Tu nombre" class="p-3 rounded-lg border text-black" />
+            <input type="email" placeholder="Tu correo" class="p-3 rounded-lg border text-black" />
+            <textarea placeholder="Tu mensaje" class="p-3 rounded-lg border text-black md:col-span-2"></textarea>
+            <button class="bg-[#E63926] hover:bg-[#0F1C39] text-white px-6 py-3 rounded-lg font-semibold w-fit transition">
                 Enviar Mensaje
             </button>
         </form>
     </section>
 
     <!-- FOOTER -->
-    <footer class="text-center py-10 bg-gray-900 text-gray-500">
+    <footer class="text-center py-10 text-gray-600 bg-white border-t">
         © 2025 DonFranciscoTaller — Todos los derechos reservados.
     </footer>
-
 
     <!-- JS PINTURA DEL MOUSE -->
     <script>
         const canvas = document.getElementById("paint-canvas");
         const ctx = canvas.getContext("2d");
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
 
-        window.addEventListener("mousemove", function (e) {
-            ctx.fillStyle = "rgba(" + (100 + Math.random() * 155) + ", " + (50 + Math.random() * 205) + ", " + (50 + Math.random() * 155) + ", 0.5)";
+        const colors = ["#E63926", "#F59E0B", "#FCD34D", "#4CAF50", "#3BA7E6"];
+
+        window.addEventListener("mousemove", (e) => {
+            ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
             ctx.beginPath();
-            ctx.arc(e.clientX, e.clientY, 8, 0, Math.PI * 2);
+            ctx.arc(e.clientX, e.clientY, 10, 0, Math.PI * 2);
             ctx.fill();
         });
     </script>
