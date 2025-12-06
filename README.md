@@ -1,1 +1,0 @@
-# Pintor-el-Oro

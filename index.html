@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DonFranciscoTaller - Arte & Pintura Profesional</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Mouse painting effect */
+        #paint-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* Modal 3D */
+        .modal-3d {
+            perspective: 900px;
+        }
+
+        .modal-content-3d {
+            transform: rotateY(0deg);
+            transition: transform 0.5s ease;
+        }
+
+        .modal-content-3d:hover {
+            transform: rotateY(10deg);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white relative">
+
+    <!-- Canvas Pintura -->
+    <canvas id="paint-canvas"></canvas>
+
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/593964104186?text=Hola%20Don%20Francisco.%20Quiero%20una%20cotización%20de%20pintura."
+        class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-xl text-2xl z-50">
+        🟢
+    </a>
+
+    <!-- HEADER -->
+    <header class="relative z-10">
+        <nav class="flex items-center justify-between px-6 py-4 bg-gray-800/60 backdrop-blur-md">
+            <div class="text-2xl font-bold text-yellow-400">
+                <img src="logo-donfrancisco.png" class="w-14 inline-block" />
+                DonFranciscoTaller
+            </div>
+            <a href="#contacto" class="bg-yellow-400 text-black px-5 py-2 rounded-lg font-semibold">Contáctame</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative z-10 px-6 lg:px-20 py-20 flex flex-col lg:flex-row items-center gap-10">
+        <div class="flex-1">
+            <h1 class="text-5xl font-bold leading-tight">
+                Arte que transforma espacios  
+                <span class="text-yellow-400">y crea historias.</span>
+            </h1>
+            <p class="mt-4 text-gray-300 text-lg">
+                Soy Francisco Quezada, pintor y dibujante profesional. Pinto iglesias, centros turísticos, gimnasios,
+                restaurantes, colegios, fincas y más.
+            </p>
+
+            <div class="mt-8 flex gap-4">
+                <a href="#galeria" class="px-6 py-3 bg-yellow-400 text-black rounded-lg font-semibold">Ver Galería</a>
+
+                <a href="https://maps.app.goo.gl/8WV9uRYj5LcvKLbP8"
+                    class="px-6 py-3 border border-yellow-400 text-yellow-400 rounded-lg font-semibold">
+                    Google Maps
+                </a>
+            </div>
+        </div>
+
+        <div class="flex-1">
+            <img src="hero-francisco.jpg" class="rounded-xl shadow-xl w-full object-cover" />
+        </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre" class="px-6 lg:px-20 py-20">
+        <h2 class="text-4xl font-bold mb-10">Sobre mí</h2>
+        <p class="text-gray-300 text-lg max-w-3xl">
+            Con más de 15 años de experiencia, he transformado espacios en Ecuador a través de pintura artística,
+            murales, detallado visual y decoración profesional de interiores y exteriores. Mi pasión es plasmar ideas,
+            emociones y colores en cada proyecto que realizo.
+        </p>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="px-6 lg:px-20 py-20 bg-gray-800">
+        <h2 class="text-4xl font-bold mb-10">Servicios</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">🎨 Pintura artística para Iglesias</div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">🏞️ Centros turísticos</div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">🏋️ Gimnasios</div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">🍽️ Restaurantes y locales</div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">🏫 Colegios</div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">🏡 Fincas y exteriores</div>
+        </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="px-6 lg:px-20 py-20">
+        <h2 class="text-4xl font-bold mb-10">Galería de Trabajos</h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- 12 imágenes -->
+            <!-- Cambia solo los archivos, no el código -->
+            <img src="gallery-01.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+            <img src="gallery-02.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+            <img src="gallery-03.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+            <img src="gallery-04.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+
+            <img src="gallery-05.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+            <img src="gallery-06.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+            <img src="gallery-07.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+            <img src="gallery-08.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+
+            <img src="gallery-09.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+            <img src="gallery-10.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+            <img src="gallery-11.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+            <img src="gallery-12.jpg" class="rounded-lg cursor-pointer" onclick="openModal(this.src)" />
+        </div>
+    </section>
+
+    <!-- MODAL 3D -->
+    <div id="modal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 modal-3d">
+        <div class="modal-content-3d bg-gray-800 p-4 rounded-lg shadow-2xl">
+            <img id="modal-img" src="" class="rounded-lg w-[90vw] max-w-3xl" />
+        </div>
+        <button onclick="closeModal()" class="absolute top-10 right-10 text-white text-3xl">✖</button>
+    </div>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="px-6 lg:px-20 py-20 bg-gray-800">
+        <h2 class="text-4xl font-bold mb-10">Contáctame</h2>
+
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
+            <input type="text" placeholder="Tu nombre" class="p-3 rounded-lg text-black" />
+            <input type="email" placeholder="Tu correo" class="p-3 rounded-lg text-black" />
+            <textarea placeholder="Tu mensaje" class="p-3 rounded-lg text-black md:col-span-2"></textarea>
+            <button class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold w-fit">
+                Enviar Mensaje
+            </button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-10 bg-gray-900 text-gray-500">
+        © 2025 DonFranciscoTaller — Todos los derechos reservados.
+    </footer>
+
+
+    <!-- JS PINTURA DEL MOUSE -->
+    <script>
+        const canvas = document.getElementById("paint-canvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener("mousemove", function (e) {
+            ctx.fillStyle = "rgba(" + (100 + Math.random() * 155) + ", " + (50 + Math.random() * 205) + ", " + (50 + Math.random() * 155) + ", 0.5)";
+            ctx.beginPath();
+            ctx.arc(e.clientX, e.clientY, 8, 0, Math.PI * 2);
+            ctx.fill();
+        });
+    </script>
+
+    <!-- JS MODAL -->
+    <script>
+        function openModal(src) {
+            document.getElementById("modal-img").src = src;
+            document.getElementById("modal").classList.remove("hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("modal").classList.add("hidden");
+        }
+    </script>
+
+</body>
+</html>
