@@ -26,10 +26,6 @@
             height: 100%;
             z-index: 0;
         }
-
-        .color-dot {
-            transition: opacity 0.4s ease;
-        }
     </style>
 </head>
 
@@ -47,15 +43,36 @@
     <!-- HEADER -->
     <header class="relative z-10 shadow-md">
         <nav class="flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur-lg border-b border-gray-200">
-            <div class="flex items-center gap-3">
-                <img src="logo-donfrancisco.png" class="w-24 h-auto" />
-                <span class="text-3xl font-bold text-[#E63926]">DonFranciscoTaller</span>
+
+            <!-- LOGO MÁS GRANDE -->
+            <div class="flex items-center">
+                <img src="logo-donfrancisco.png" class="w-32 h-auto" />
             </div>
 
-            <a href="#contacto"
-                class="bg-[#F59E0B] hover:bg-[#E63926] text-white px-5 py-2 rounded-lg font-semibold transition">
-                Contáctame
-            </a>
+            <!-- MENÚ con Hooks -->
+            <div class="flex items-center gap-6 text-lg font-semibold">
+
+                <a href="#galeria"
+                    class="text-[#E63926] hover:text-[#0F1C39] transition">
+                    Galería
+                </a>
+
+                <a href="#servicios"
+                    class="text-[#F59E0B] hover:text-[#E63926] transition">
+                    Servicios
+                </a>
+
+                <a href="#sobre"
+                    class="text-[#3BA7E6] hover:text-[#0F1C39] transition">
+                    Experiencia
+                </a>
+
+                <a href="#contacto"
+                    class="bg-[#E63926] hover:bg-[#0F1C39] text-white px-5 py-2 rounded-lg shadow-md transition">
+                    Cotiza tu proyecto
+                </a>
+
+            </div>
         </nav>
     </header>
 
@@ -77,9 +94,9 @@
                     Ver Galería
                 </a>
 
-                <a href="https://maps.app.goo.gl/8WV9uRYj5LcvKLbP8"
+                <a href="#contacto"
                     class="px-6 py-3 border-2 border-[#0F1C39] text-[#0F1C39] hover:bg-[#0F1C39] hover:text-white rounded-lg font-semibold transition">
-                    Google Maps
+                    Cotizar Trabajo
                 </a>
             </div>
         </div>
@@ -91,7 +108,7 @@
 
     <!-- SOBRE MÍ -->
     <section id="sobre" class="px-6 lg:px-20 py-20">
-        <h2 class="text-4xl font-bold mb-6 text-[#0F1C39]">Sobre mí</h2>
+        <h2 class="text-4xl font-bold mb-6 text-[#0F1C39]">Sobre mi experiencia</h2>
         <p class="text-gray-700 text-lg max-w-3xl">
             Con más de 15 años de experiencia, he transformado espacios en Ecuador con pintura artística, murales y
             decoración profesional. Mi pasión es plasmar emociones, ideas y creatividad en cada proyecto, siempre con
