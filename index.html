@@ -9,83 +9,81 @@
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Fondo elegante de partículas -->
     <style>
         body {
             background: #ffffff;
             color: #1B2B45;
             font-family: 'Poppins', sans-serif;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        /* Mouse painting effect con paleta del logo */
-        #paint-canvas {
+        /* Partículas flotantes elegantes */
+        .particles {
             position: fixed;
             top: 0;
             left: 0;
-            pointer-events: none;
             width: 100%;
             height: 100%;
+            pointer-events: none;
             z-index: 0;
+            background-image: radial-gradient(circle, rgba(200,200,255,0.3) 2px, transparent 2px),
+                              radial-gradient(circle, rgba(200,200,255,0.15) 2px, transparent 2px);
+            background-size: 200px 200px, 300px 300px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            from {
+                background-position: 0 0, 0 0;
+            }
+            to {
+                background-position: 500px 500px, -500px -500px;
+            }
         }
     </style>
 </head>
 
 <body class="relative">
 
-    <!-- Canvas Pintura -->
-    <canvas id="paint-canvas"></canvas>
+    <!-- Fondo de partículas -->
+    <div class="particles"></div>
 
-    <!-- WhatsApp flotante -->
-    <a href="https://wa.me/593964104186?text=Hola%20Don%20Francisco.%20Quiero%20una%20cotización%20de%20pintura."
-        class="fixed bottom-6 right-6 bg-[#4CAF50] text-white p-4 rounded-full shadow-xl text-3xl z-50">
+    <!-- WhatsApp flotante con mensaje extendido -->
+    <a href="https://wa.me/593964104186?text=Hola%20Francisco%2C%20he%20visto%20tus%20trabajos%20y%20estoy%20interesado%20en%20una%20cotizaci%C3%B3n.%20%C2%BFMe%20puedes%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        class="fixed bottom-6 right-6 bg-[#4CAF50] text-white p-4 rounded-full shadow-xl text-3xl z-50 hover:scale-110 transition">
         💬
     </a>
 
     <!-- HEADER -->
     <header class="relative z-10 shadow-md">
-        <nav class="flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur-lg border-b border-gray-200">
+        <nav class="flex items-center justify-between px-6 py-4 bg-white/90 backdrop-blur-lg border-b border-gray-300">
 
-            <!-- LOGO MÁS GRANDE -->
-            <div class="flex items-center">
-                <img src="logo-donfrancisco.png" class="w-32 h-auto" />
-            </div>
+            <img src="logo-donfrancisco.png" class="w-36 h-auto" />
 
-            <!-- MENÚ con Hooks -->
-            <div class="flex items-center gap-6 text-lg font-semibold">
-
-                <a href="#galeria"
-                    class="text-[#E63926] hover:text-[#0F1C39] transition">
-                    Galería
-                </a>
-
-                <a href="#servicios"
-                    class="text-[#F59E0B] hover:text-[#E63926] transition">
-                    Servicios
-                </a>
-
-                <a href="#sobre"
-                    class="text-[#3BA7E6] hover:text-[#0F1C39] transition">
-                    Experiencia
-                </a>
-
+            <div class="flex items-center gap-8 text-lg font-semibold">
+                <a href="#galeria" class="text-[#E63926] hover:text-[#0F1C39] transition">Galería</a>
+                <a href="#servicios" class="text-[#F59E0B] hover:text-[#E63926] transition">Servicios</a>
+                <a href="#sobre" class="text-[#3BA7E6] hover:text-[#0F1C39] transition">Experiencia</a>
                 <a href="#contacto"
                     class="bg-[#E63926] hover:bg-[#0F1C39] text-white px-5 py-2 rounded-lg shadow-md transition">
                     Cotiza tu proyecto
                 </a>
-
             </div>
         </nav>
     </header>
 
     <!-- HERO -->
-    <section class="relative z-10 px-6 lg:px-20 py-20 flex flex-col lg:flex-row items-center gap-10">
+    <section class="relative z-10 px-6 lg:px-20 py-24 flex flex-col lg:flex-row items-center gap-16">
         <div class="flex-1">
             <h1 class="text-5xl font-extrabold leading-tight text-[#1B2B45]">
                 Arte que transforma tus espacios  
-                <span class="text-[#E63926]">con color y creatividad.</span>
+                <span class="text-[#E63926]">con calidad y creatividad.</span>
             </h1>
             <p class="mt-4 text-gray-600 text-lg">
-                Soy Francisco Quezada, pintor y dibujante profesional. Pinto iglesias, centros turísticos, gimnasios,
-                restaurantes, colegios, fincas y más.
+                Soy Francisco Quezada, pintor profesional con más de 15 años de experiencia en murales, interiores,
+                exteriores y espacios comerciales.
             </p>
 
             <div class="mt-8 flex gap-4">
@@ -93,7 +91,6 @@
                     class="px-6 py-3 bg-[#E63926] hover:bg-[#0F1C39] text-white rounded-lg font-semibold transition">
                     Ver Galería
                 </a>
-
                 <a href="#contacto"
                     class="px-6 py-3 border-2 border-[#0F1C39] text-[#0F1C39] hover:bg-[#0F1C39] hover:text-white rounded-lg font-semibold transition">
                     Cotizar Trabajo
@@ -106,61 +103,83 @@
         </div>
     </section>
 
-    <!-- SOBRE MÍ -->
-    <section id="sobre" class="px-6 lg:px-20 py-20">
-        <h2 class="text-4xl font-bold mb-6 text-[#0F1C39]">Sobre mi experiencia</h2>
-        <p class="text-gray-700 text-lg max-w-3xl">
-            Con más de 15 años de experiencia, he transformado espacios en Ecuador con pintura artística, murales y
-            decoración profesional. Mi pasión es plasmar emociones, ideas y creatividad en cada proyecto, siempre con
-            calidad y dedicación.
+    <!-- EXPERIENCIA -->
+    <section id="sobre" class="px-6 lg:px-20 py-28 bg-[#F9FAFB] border-t border-b">
+        <h2 class="text-4xl font-bold mb-6 text-[#0F1C39]">Mi experiencia</h2>
+        <p class="text-gray-700 text-lg max-w-3xl leading-relaxed">
+            He transformado más de 400 espacios entre iglesias, centros turísticos, gimnasios, restaurantes, colegios,
+            fincas y residencias. Me especializo en pintura artística, murales realistas y decoración visual para
+            negocios que desean destacar.
         </p>
     </section>
 
     <!-- SERVICIOS -->
-    <section id="servicios" class="px-6 lg:px-20 py-20 bg-[#F9FAFB] border-t border-b">
-        <h2 class="text-4xl font-bold mb-10 text-[#0F1C39]">Servicios</h2>
+    <section id="servicios" class="px-6 lg:px-20 py-28">
+        <h2 class="text-4xl font-bold mb-12 text-[#0F1C39]">Servicios</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#E63926]">🎨 Iglesias</div>
-            <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#F59E0B]">🏞️ Centros turísticos</div>
-            <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#4CAF50]">🏋️ Gimnasios</div>
-            <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#3BA7E6]">🍽️ Restaurantes</div>
-            <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#0F1C39]">🏫 Colegios</div>
-            <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#FCD34D]">🏡 Fincas</div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#E63926]">🎨 Pintura para Iglesias</div>
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#F59E0B]">🏞️ Centros Turísticos</div>
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#4CAF50]">🏋️ Gimnasios</div>
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#3BA7E6]">🍽️ Restaurantes</div>
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#0F1C39]">🏫 Colegios</div>
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#FCD34D]">🏡 Fincas y Exteriores</div>
         </div>
     </section>
 
     <!-- GALERÍA -->
-    <section id="galeria" class="px-6 lg:px-20 py-20">
-        <h2 class="text-4xl font-bold mb-10 text-[#0F1C39]">Galería de Trabajos</h2>
+    <section id="galeria" class="px-6 lg:px-20 py-28">
+        <h2 class="text-4xl font-bold mb-12 text-[#0F1C39]">Galería de Trabajos</h2>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <img src="gallery-01.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <img src="gallery-01.jpg" class="rounded-lg cursor-pointer shadow-lg hover:scale-105 transition"
                 onclick="openModal(this.src)" />
-            <img src="gallery-02.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+            <img src="gallery-02.jpg" class="rounded-lg cursor-pointer shadow-lg hover:scale-105 transition"
                 onclick="openModal(this.src)" />
-            <img src="gallery-03.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+            <img src="gallery-03.jpg" class="rounded-lg cursor-pointer shadow-lg hover:scale-105 transition"
                 onclick="openModal(this.src)" />
-            <img src="gallery-04.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
-                onclick="openModal(this.src)" />
-
-            <img src="gallery-05.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
-                onclick="openModal(this.src)" />
-            <img src="gallery-06.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
-                onclick="openModal(this.src)" />
-            <img src="gallery-07.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
-                onclick="openModal(this.src)" />
-            <img src="gallery-08.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+            <img src="gallery-04.jpg" class="rounded-lg cursor-pointer shadow-lg hover:scale-105 transition"
                 onclick="openModal(this.src)" />
 
-            <img src="gallery-09.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+            <img src="gallery-05.jpg" class="rounded-lg cursor-pointer shadow-lg hover:scale-105 transition"
                 onclick="openModal(this.src)" />
-            <img src="gallery-10.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+            <img src="gallery-06.jpg" class="rounded-lg cursor-pointer shadow-lg hover:scale-105 transition"
                 onclick="openModal(this.src)" />
-            <img src="gallery-11.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+            <img src="gallery-07.jpg" class="rounded-lg cursor-pointer shadow-lg hover:scale-105 transition"
                 onclick="openModal(this.src)" />
-            <img src="gallery-12.jpg" class="rounded-lg cursor-pointer shadow-md hover:scale-105 transition"
+            <img src="gallery-08.jpg" class="rounded-lg cursor-pointer shadow-lg hover:scale-105 transition"
                 onclick="openModal(this.src)" />
+
+            <img src="gallery-09.jpg" class="rounded-lg cursor-pointer shadow-lg hover:scale-105 transition"
+                onclick="openModal(this.src)" />
+            <img src="gallery-10.jpg" class="rounded-lg cursor-pointer shadow-lg hover:scale-105 transition"
+                onclick="openModal(this.src)" />
+            <img src="gallery-11.jpg" class="rounded-lg cursor-pointer shadow-lg hover:scale-105 transition"
+                onclick="openModal(this.src)" />
+            <img src="gallery-12.jpg" class="rounded-lg cursor-pointer shadow-lg hover:scale-105 transition"
+                onclick="openModal(this.src)" />
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="px-6 lg:px-20 py-28 bg-[#F9FAFB] border-t border-b">
+        <h2 class="text-4xl font-bold mb-10 text-[#0F1C39]">Preguntas frecuentes</h2>
+
+        <div class="space-y-6">
+            <div>
+                <h3 class="font-bold text-xl">¿En qué ciudades trabajas?</h3>
+                <p class="text-gray-600">Trabajo en toda la provincia de El Oro, zonas turísticas y provincias cercanas.</p>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-xl">¿Qué tipo de pintura usas?</h3>
+                <p class="text-gray-600">Utilizo pintura de alta durabilidad para interiores y exteriores, con acabados profesionales.</p>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-xl">¿Cuánto cuesta un mural?</h3>
+                <p class="text-gray-600">Depende del tamaño, diseño y nivel de detalle. Se entrega cotización exacta por WhatsApp.</p>
+            </div>
         </div>
     </section>
 
@@ -171,8 +190,8 @@
     </div>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="px-6 lg:px-20 py-20 bg-[#F9FAFB] border-t">
-        <h2 class="text-4xl font-bold mb-10 text-[#0F1C39]">Contáctame</h2>
+    <section id="contacto" class="px-6 lg:px-20 py-28">
+        <h2 class="text-4xl font-bold mb-12 text-[#0F1C39]">Contáctame</h2>
 
         <form class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
             <input type="text" placeholder="Tu nombre" class="p-3 rounded-lg border text-black" />
@@ -188,24 +207,6 @@
     <footer class="text-center py-10 text-gray-600 bg-white border-t">
         © 2025 DonFranciscoTaller — Todos los derechos reservados.
     </footer>
-
-    <!-- JS PINTURA DEL MOUSE -->
-    <script>
-        const canvas = document.getElementById("paint-canvas");
-        const ctx = canvas.getContext("2d");
-
-        canvas.width = innerWidth;
-        canvas.height = innerHeight;
-
-        const colors = ["#E63926", "#F59E0B", "#FCD34D", "#4CAF50", "#3BA7E6"];
-
-        window.addEventListener("mousemove", (e) => {
-            ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
-            ctx.beginPath();
-            ctx.arc(e.clientX, e.clientY, 10, 0, Math.PI * 2);
-            ctx.fill();
-        });
-    </script>
 
     <!-- JS MODAL -->
     <script>
